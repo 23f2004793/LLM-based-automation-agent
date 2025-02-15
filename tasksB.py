@@ -2,6 +2,7 @@
 
 # B1 & B2: Security Checks
 import os
+from flask import Flask, request, jsonify
 
 def B12(filepath):
     if filepath.startswith('/data'):
@@ -80,7 +81,7 @@ def B9(md_path, output_path):
         file.write(html)
 
 # B10: API Endpoint for CSV Filtering
-from flask import Flask, request, jsonify
+
 app = Flask(__name__)
 @app.route('/filter_csv', methods=['POST'])
 def filter_csv():

@@ -11,6 +11,8 @@
 #   "pybase64",
 #   "python-dotenv",
 #   "httpx",
+#   "flask",
+#   "requests",
 #   "markdown",
 #   "duckdb"
 # ]

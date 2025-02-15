@@ -8,7 +8,7 @@ ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 
 # Install FastAPI and Uvicorn
-RUN pip install fastapi uvicorn
+RUN pip install fastapi uvicorn flask
 
 # Ensure the installed binary is on the `PATH`
 ENV PATH="/root/.local/bin:$PATH"
@@ -17,7 +17,7 @@ ENV PATH="/root/.local/bin:$PATH"
 WORKDIR /app
 
 # Copy application files
-COPY app.py /app
+COPY . /app
 
 # Explicitly set the correct binary path and use `sh -c`
-CMD ["/root/.local/bin/uv", "run", "app.py"]
+CMD ["uv", "run", "app.py"]
